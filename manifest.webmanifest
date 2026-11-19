@@ -1,0 +1,11 @@
+{
+  "name": "Geshii: Neon Fighters",
+  "short_name": "Geshii",
+  "description": "Fight for the night in Geshii: Neon Fighters.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090b18",
+  "theme_color": "#090b18",
+  "orientation": "landscape",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

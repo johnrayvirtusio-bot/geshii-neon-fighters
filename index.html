@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#090b18" />
+    <meta name="description" content="Geshii: Neon Fighters — a fast local 1v1 fighting game for browser and Android." />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Geshii — Neon Fighters</title>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Geshii home"><span class="brand-mark">G</span><span>GES<span class="brand-accent">HII</span></span></a>
+        <div class="topbar-right"><span class="status-dot"></span><span>NEON DISTRICT · ARENA 01</span><button class="sound-toggle" id="sound-toggle" aria-label="Toggle sound" title="Toggle sound">♫ <span>SOUND</span></button></div>
+      </header>
+
+      <section class="game-frame" aria-label="Geshii fighting game">
+        <div class="game-hud">
+          <div class="fighter-hud left-hud">
+            <div class="fighter-name"><span class="player-tag">P1</span><span id="name-one">VOLT</span></div>
+            <div class="health-track"><div class="health-fill health-one" id="health-one"></div></div>
+            <div class="hud-sub"><span id="wins-one">WINS 0</span><span class="energy-label">ENERGY <i id="energy-one"></i></span></div>
+          </div>
+          <div class="round-display"><span class="round-label">ROUND</span><strong id="round-number">01</strong><span class="timer" id="timer">60</span></div>
+          <div class="fighter-hud right-hud">
+            <div class="fighter-name"><span id="name-two">SHADE</span><span class="player-tag">P2</span></div>
+            <div class="health-track"><div class="health-fill health-two" id="health-two"></div></div>
+            <div class="hud-sub"><span class="energy-label">ENERGY <i id="energy-two"></i></span><span id="wins-two">WINS 0</span></div>
+          </div>
+        </div>
+        <canvas id="arena" width="960" height="540" aria-label="Neon Fighters arena"></canvas>
+        <div class="game-overlay" id="overlay">
+          <div class="overlay-card" id="overlay-card">
+            <div class="eyebrow"><span></span> THE CITY NEVER SLEEPS</div>
+            <h1>NEON<br /><em>FIGHTERS</em></h1>
+            <p class="intro-copy">One arena. Two legends. Who owns the night?</p>
+            <div class="mode-picker">
+              <button class="mode-button selected" data-mode="local"><span class="mode-icon">⚔</span><span><b>LOCAL DUEL</b><small>Two players · one device</small></span><span class="mode-arrow">↗</span></button>
+              <button class="mode-button" data-mode="cpu"><span class="mode-icon">◉</span><span><b>SOLO CHALLENGE</b><small>Take on the training bot</small></span><span class="mode-arrow">↗</span></button>
+            </div>
+            <button class="primary-button" id="start-button">ENTER THE ARENA <span>→</span></button>
+            <div class="control-hint" id="menu-hint">P1: A / D · W · F / G <span>•</span> P2: ← / → · ↑ · K / L</div>
+          </div>
+          <div class="result-card hidden" id="result-card"><div class="eyebrow">MATCH COMPLETE</div><h2 id="result-title">VOLT WINS</h2><p id="result-copy">The crowd is still buzzing.</p><button class="primary-button" id="rematch-button">FIGHT AGAIN <span>↻</span></button><button class="text-button" id="menu-button">BACK TO MENU</button></div>
+          <div class="round-callout hidden" id="round-callout">FIGHT!</div>
+        </div>
+        <div class="touch-controls" id="touch-controls" aria-label="Touch controls">
+          <div class="touch-side"><button data-key="a" aria-label="Player one left">◀</button><button data-key="d" aria-label="Player one right">▶</button><button data-key="w" class="jump" aria-label="Player one jump">↑</button></div>
+          <div class="touch-side touch-actions"><button data-key="f" class="attack-light" aria-label="Player one light attack">JAB</button><button data-key="g" class="attack-heavy" aria-label="Player one heavy attack">HIT</button></div>
+        </div>
+        <div class="mobile-note" id="mobile-note">Touch controls are for Player 1 · rotate your phone for the best view</div>
+      </section>
+      <footer class="footer"><span>GES<span class="brand-accent">HII</span> / NEON FIGHTERS</span><span>BUILD YOUR LEGEND <b>✦</b></span><span>PROTOTYPE · LOCAL PLAY</span></footer>
+    </main>
+    <script type="module" src="/game.js"></script>
+  </body>
+</html>
